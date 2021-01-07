@@ -1,0 +1,9 @@
+[Unit]
+Description=A systemd service for the mlat-server.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/local/py-mlat/mlat-server/start_mlat-server.sh
+
+[Install]
+WantedBy=multi-user.target
