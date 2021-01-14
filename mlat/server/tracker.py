@@ -264,8 +264,8 @@ class Tracker(object):
         new_mlat = set()
 
         for ac in receiver.tracking:
-            if ac.allow_mlat and (len(ac.adsb_seen) < 3 or ac.last_syncpoint_time < now - 300):
-                new_mlat.add(ac)
+            #if ac.allow_mlat and (len(ac.adsb_seen) < 3 or ac.last_syncpoint_time < now - 300):
+            new_mlat.add(ac)
 
         receiver.update_interest_sets(new_sync, new_mlat, new_adsb)
         asyncio.get_event_loop().call_soon(receiver.refresh_traffic_requests)
